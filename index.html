@@ -1,13 +1,142 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-<title>Chapter 8 and 9 InClassNotes</title>
+<title>Sanders Chapter 8 and 9 InClassNotes</title>
 <meta charset="utf-8">
 <style>
-	
+    table {margin: auto;
+    border: 5px solid #000;
+    border-spacing: 0;
+    }
+    td, th {padding: 0.5em;
+    border: 0.5ex #000;
+    
+    }
+    caption {font-size: 1.2em;}
+    #wrapper {display: flex;
+              flex-direction: row;}
+    #stupers{flex: 2;}
+    #stuRating{flex: 3;}
+    #stuInfoCol1{flex: 2;}
+    #stuInfoCol2{flex: 3;}
+    input[type="radio"], input[type="checkbox"]{display: inline;}
+    
 </style>
 </head>
 <body>
-
+    <h1>Student Information Table</h1>
+    <table>
+    <caption>Course Schedule</caption>
+        <thead>
+        
+        <tr>
+            <th id="time">Time</th>
+            <th id="m">Monday</th>
+            <th id="t">Tuesday</th>
+            <th id="w">Wednesday</th>
+            <th id="r">Thursday</th>
+            <th id="f">Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td headers="time">8:00 - 9:15am</td>
+            <td headers="m"></td>
+            <td headers="t">Chemistry</td>
+            <td headers="w"></td>
+            <td headers="r">Chemistry</td>
+            <td headers="f"></td>
+            </tr>
+            <tr>
+            <td headers="time">9:00 - 9:50am</td>
+            <td headers="m">Web Dev II</td>
+            <td headers="t"></td>
+            <td headers="w">Web Dev II</td>
+            <td headers="r"></td>
+            <td headers="f">Web Dev II</td>
+            </tr>
+            <tr>
+                <td headers="time">11:00 - 11:50am</td>
+            <td headers="m">Graphic Design</td>
+            <td headers="t"></td>
+            <td headers="w">Graphic Design</td>
+            <td headers="r"></td>
+            <td headers="f">Graphic Design</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <h1>Student Information Form</h1>
+    <p>Required fields marked with an asterisk</p>
+    <form method="post" action="http://webdevbasics.net/scripts/demo.php"></form>
+        <div>
+            <fieldset id="stupers"><legend>Student Personal</legend>
+            <label for="myName">*Name</label>
+                <input type="text" name="myName" id="myName" required= "required"
+                placeholder="your first and last name">
+                <label for="myAddress">*Address:</label>
+                <input type="text" name="myAddress" id="myAddress" required="required"
+                placeholder="your address">
+                <label for="myEmail">*Email:</label>
+                <input type="text" name="myEmail" id="myEmail" required="required"
+                placeholder="your@ourdomain.com">
+                <label for="myUsername">*Username:</label>
+                <input type="text" name="myUsername" id="myUsername" required="required"
+                placeholder="your username">
+                <label for="myPassword">*Password:</label>
+                <input type="text" name="myPassword" id="myPassword" required="required"
+                placeholder="your password">
+            </fieldset>
+            
+            <fieldset id="stuInfoCol1"><legend>Student Information</legend>
+                Select Status<br>
+                <input type="radio" name="myStatus" id="GS" value="Graduate Student">
+                Graduate Student<br>
+                <input type="radio" name="myStatus" id="S" value="Senior">
+                Senior<br>
+                <input type="radio" name="myStatus" id="J" value="Junior">
+                Junior<br>
+                <input type="radio" name="myStatus" id="So" value="Sophomore">
+                Sophomore<br>
+                <input type="radio" name="myStatus" id="F" value="Freshman">
+                Freshman<br>
+             
+            
+            
+                Select Organization:<br>
+                <Input type="checkbox" name="myOrg" id="acm" value="ACM">
+                ACM<br>
+                <Input type="checkbox" name="myOrg" id="adink" value="adink">
+                adink<br>
+                <Input type="checkbox" name="myOrg" id="s" value="sorority">
+                sorority<br>
+                <Input type="checkbox" name="myOrg" id="f" value="fraternity">
+                fraternity<br>
+                <Input type="checkbox" name="myOrg" id="other" value="other">
+                other<br>
+            
+                 </fieldset>
+                    
+                    <fieldset id="stuInfoCol2"><legend>Campus</legend>
+                    Do you live on campus: <br>
+                    <select size= "1" name="campus" id="campus">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+            </select>
+                    <label for="moveInDate">Choose Move in Date</label>
+                    <input type="date" name="moveInDate" id="moveInDate">
+                    </fieldset>
+                    
+                    <fieldset id="stuRating"><legend>Student Rating/Comments</legend>
+                        <label for="myRating">How would you Rate NW: (1(bad)  -  10(good)):</label>
+                        <input type="range" name="myRating" id="myRating" min="1" max="10">
+                        <label for="myComments">*Comments:</label>
+                        <textarea name="myComments" id="myComments" rows="2" cols="20"
+                          required="required"></textarea>
+                        <input id="mySubmit" type="submit" value="Submit">
+                    
+                    </fieldset>
+                    
+        </div>
 </body>
 </html>
